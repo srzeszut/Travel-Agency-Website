@@ -1,0 +1,54 @@
+
+<a routerLink="/trips">
+    <div class="back">
+        Powrót do oferty wycieczek
+    </div>
+</a>
+
+<app-reserved></app-reserved>
+
+<div class="container">
+
+    <picture>
+        <img src="{{trip.img1}}" alt="{{trip.name}}">
+
+    </picture>
+      <div class="content">
+          <p class="name">{{trip.name | uppercase}}</p>
+          <p class="desc"><b>{{trip.destination | uppercase}}</b></p>
+          <p class="desc">{{trip.startingDate | date}} - {{trip.endingDate | date}}</p>
+          <p class="desc">{{trip.description}}</p>
+          <hr class="line">
+          <span id="price">Cena: {{trip.price | currency}} </span>
+
+          <div class="add-remove">
+            <span class="bot">Ilość miejsc: <button  class="ar" [ngClass]="{disabled : showAmount(trip)==trip.quantity}" (click)="resignTrip(trip)">-</button> {{showAmount(trip)}}
+              <button class="ar" [ngClass]="{disabled : showAmount(trip)>0}" (click)="reserveTrip(trip)" >+</button>
+            </span>
+        </div>
+            <span id="rating" > <b>{{trip.rating}}             </b><app-rating  [selectedValue]="trip.rating" ></app-rating>   ({{trip.numberOfRates}})</span><!--(emiter)="addReview($event,trip)"-->
+        </div>
+</div>
+
+<div class="form">
+  <app-review-post (emiter)="addPost($event)"></app-review-post>
+</div>
+
+
+
+<div class="posts">
+    <div class="single-post" *ngFor="let post of posts">
+      <b>Nick:</b> {{post.nick}} <br>
+      <b>Wycieczka:</b> {{post.trip}} <br>
+
+      <div class="star" >
+          <b>Ocena: {{post.rate}}</b>
+          <!-- <app-rating></app-rating> -->
+      </div>
+          <b>Data skorzystania: </b> {{post.date | date: 'shortDate'}}<br>
+      <b>Opis: </b> {{post.text}}
+  </div>
+  </div>
+
+
+

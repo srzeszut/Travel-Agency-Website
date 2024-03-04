@@ -1,0 +1,139 @@
+
+.container{
+  display: flex;
+  flex-direction: row;
+}
+app-filter{
+  position: fixed;
+  top: 150px;
+  z-index: -1;
+}
+.add-trip{
+  padding: 20px;
+  background-color: orangered;
+  border-radius: 15px;
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+}
+.add-trip:hover{
+  background-color: rgb(165, 64, 27);
+  transition: 300ms ease all;
+  cursor: pointer;
+
+}
+.trip-container{
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  border-radius: 5px;
+  /* margin-left: 200px; */
+
+
+}
+app-add-trip{
+  min-width: 335px;
+  min-height: 550px;
+  width: 20%;
+  margin: 2% auto 2% auto;
+
+}
+.trip-info{
+  border: 2px solid rgb(197, 197, 197);
+  min-width: 335px;
+  min-height: 550px;
+  border-radius: 5px;
+  width: 20%;
+  text-align: left;
+  margin: 2% auto 2% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(233, 233, 233));
+  /* background-image: linear-gradient(rgb(203, 253, 230), rgb(87, 255, 185)); */
+  -webkit-box-shadow: 0px -1px 32px -18px rgba(75, 90, 66, 1);
+-moz-box-shadow: 0px -1px 32px -18px rgba(75, 90, 66, 1);
+box-shadow: 0px -1px 32px -18px rgba(75, 90, 66, 1);
+transition:500ms ease all;
+
+
+}
+
+.name{
+  font-size: larger;
+  color: rgb(255, 115, 0);
+  font-weight: bold
+}
+
+img{
+
+  display: block;
+
+    width: 200px;
+    height: 200px;
+    border-radius: 100% ;
+    margin:  5% auto;
+    -webkit-box-shadow: 0px 0px 32px 2px rgba(75, 90, 66, 1);
+    -moz-box-shadow: 0px 0px 32px 2px rgba(75, 90, 66, 1);
+    box-shadow: 0px 0px 32px 2px rgba(75, 90, 66, 1);
+}
+.content{
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.name{
+  font-size: 1.5em;
+  font-weight:bold;
+
+
+}
+.add-remove{
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+
+.bot{
+  padding: 1em 1em 1em 0;
+}
+
+p{
+  margin-top: 0;
+  /* width: auto;
+  max-width: 300px; */
+  line-break: anywhere;
+
+}
+
+
+.rem-trip{
+  /* position:relative; */
+  /* right: -45%; */
+  /* bottom:100.5%; */
+  background-color: rgb(255, 115, 0);
+  border: 1px solid grey;
+  border-radius: 4px;
+  color: white;
+
+}
+.rem-trip:hover{
+  background-color:rgb(189, 85, 0) ;
+  transition:300ms ease all;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1560px) {
+  .trip-info{
+      width: 30%;
+
+  }
+
+}
+

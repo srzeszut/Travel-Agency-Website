@@ -1,0 +1,44 @@
+
+.container{
+  /* border: 1px solid orangered; */
+
+  min-width: 300px;
+  /* background-color: aqua; */
+  /* height: 100vh; */
+  overflow-y:hidden;
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+
+
+}
+.bell{
+  padding: 20px;
+  background-color: orangered;
+  border-radius: 15px;
+  color: white;
+  margin-right: 10px;
+}
+.bell:hover{
+  background-color: rgb(165, 64, 27);
+  transition: 300ms ease all;
+  cursor: pointer;
+
+}
+
+.count{
+    width: 220px;
+
+    color: white;
+
+    text-align: center;
+
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+
+
+
+}

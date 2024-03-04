@@ -1,0 +1,27 @@
+.filter-container{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+    border: 1px solid;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(233, 233, 233));
+
+
+}
+.rating-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+.country-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+.price-container{
+    padding: 1em;
+}
+.date-container{
+    padding: 1em;
+}

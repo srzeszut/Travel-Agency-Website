@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container">
+  <b>Oceń wycieczkę</b> <br>
+  Ocena:
+  <div *ngIf="this.AS.currentRole !='manager'" class="stars-container" >
+    <div class="rating-list" *ngFor="let star of stars; let i= index" >
+      <i class="fa fa-star" (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}"></i>
+      </div>
+      {{selectedValue}}
+    </div>
+  <form [formGroup]="form" >
+
+
+      <span>Wycieczka: </span><br>
+      <input id="name" formControlName="trip"><br>
+
+      <span>Data skorzystania: </span><br>
+      <input type="date" id="date" name="date" formControlName="date"><br>
+
+      <span>Opinia: </span><br>
+      <input id="review" formControlname="opis"><br>
+
+      <button type="submit" id="submit"  [disabled]="!form.valid"  value="Dodaj opinie" (click)="onSubmit()">Submit</button>
+      <span *ngIf="this.AS.currentBan" style="color: red;">Jesteś zbanowany!</span>
+
+  </form>
+</div>

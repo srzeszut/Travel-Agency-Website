@@ -1,0 +1,45 @@
+<div class="body">
+
+
+  <div class="container">
+<!--
+    <form >
+      <p><b>ZALOGUJ SIĘ</b></p>
+        <p>
+            <label class="title" for="npass">Email</label>
+            <input  placeholder="Enter Email" type="text" id="npass" name="newpasswprd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <i class="bi bi-eye-slash" id="toggleNewPassword"></i>
+        </p>
+
+        <p>
+            <label class="title" for="rpass">Password</label>
+            <input   placeholder="Enter Password" type="password" id="rpass" name="repeatpassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+            <i class="bi bi-eye-slash" id="toggleRPassword"></i>
+        </p>
+        <button type="submit">Login</button>
+
+    </form> -->
+    <form #registerForm="ngForm" (ngSubmit)="handleRegister(registerForm.value)">
+      <p><b>ZAREJESTRUJ SIĘ</b></p>
+      <div class="main">
+
+        <div class="input-fields">
+          <input name="name" ngModel placeholder="Name" id="name" type="text" class="input-field" />
+        </div>
+
+        <div class="input-fields">
+          <input name="email" ngModel placeholder="Email" id="email" type="email" class="input-field" />
+        </div>
+        <div class="input-fields">
+          <input name="password" ngModel placeholder="Password" id="password" type="password" class="input-field" />
+        </div>
+        <button>REGISTER </button>
+      </div>
+    </form>
+
+    <div class="register">
+      <span class="reg">Masz juz konto? <a routerLink="/login">Zaloguj się</a></span>
+    </div>
+  </div>
+
+</div>

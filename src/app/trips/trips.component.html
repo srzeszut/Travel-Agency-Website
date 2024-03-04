@@ -1,0 +1,51 @@
+<!-- <p>trips works!</p> -->
+<app-reserved></app-reserved>
+
+<!-- <app-filter [loadedCountries]="filteredCountries" [allCountries]="loadCountries()" [allRatings]="loadRating()" [loadedRating]="filteredRating"  [loadedpricel]="cheapest()" [loadedpriceh]="mostExpensive()"
+  (emiter)="changeFilters($event)"></app-filter> -->
+<div class="trip-container">
+  <!-- <app-add-trip (emiter)="addTrip($event)">
+  </app-add-trip> -->
+  <div class="trip-info"
+  [ngClass]="{
+    'most-expensive': trip.price == mostExpensive()&& showAmount(trip)>0,
+    'least-expensive': trip.price == cheapest()&& showAmount(trip)>0
+  }"
+
+  [ngStyle]="showAmount(trip)==0 ? {'opacity': 0.2}:
+  showAmount(trip)<=3 ?{'background-image': 'linear-gradient(rgb(203, 203, 230), rgb(87, 255, 185))'}
+  :{'background-image': 'linear-gradient(rgb(255, 255, 255), rgb(233, 233, 233))'}"
+
+  *ngFor=" let trip of getTrips()  ">
+  <!-- | filterPipe: filteredCountries:filteredLowPrice:filteredUpPrice:
+  filteredStartDate:filteredEndDate:filteredRating); let i=index -->
+
+
+      <picture>
+        <a routerLink="/trips/{{trip.id}}">
+          <img src="{{trip.img1}} "alt="{{trip.name}}">
+        </a>
+      </picture>
+      <div class="content">
+          <p class="name">{{trip.name | uppercase}}</p>
+          <p class="desc"><b>{{trip.destination | uppercase}}</b></p>
+          <p class="desc">{{trip.startingDate | date}} - {{trip.endingDate | date}}</p>
+          <p class="desc">{{trip.description}}</p>
+          <hr class="line">
+          <span id="price">Cena: {{trip.price | currency}} </span>
+
+            <div *ngIf="AS.isLoggedIn" class="add-remove">
+                <span class="bot">Ilość miejsc: <button  class="ar" [ngClass]="{disabled : showAmount(trip)==trip.quantity}" (click)="resignTrip(trip)">-</button> {{showAmount(trip)}}
+                  <button class="ar" [ngClass]="{disabled : showAmount(trip)>0}" (click)="reserveTrip(trip)" >+</button>
+                </span>
+            </div>
+            <br>
+            <span  id="rating" > <b>{{trip.rating}}             </b><app-rating  [selectedValue]="trip.rating" (emiter)="addReview($event,trip)"></app-rating>      ({{trip.numberOfRates}})</span>
+        </div>
+
+
+</div>
+</div>
+
+
+

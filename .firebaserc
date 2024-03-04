@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "wycieczki-wdai": {
+      "hosting": {
+        "wycieczki": [
+          "wycieczki-wdai"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "wycieczki-wdai"
+  }
+}

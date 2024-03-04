@@ -1,0 +1,15 @@
+.rating-list .fa.selected {
+    color: #ffd700;
+}
+
+.rating-list {
+    display: inline-flex;
+
+  }
+  .rating-list .fa{
+    color:rgb(167, 167, 167);
+    cursor: pointer;
+  }
+i{
+    padding: 2px;
+}

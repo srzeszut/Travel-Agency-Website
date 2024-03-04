@@ -1,0 +1,43 @@
+.form>p{
+  padding:0 1em ;
+  font-size: larger;
+  font-weight: 500;
+
+
+
+}
+.back{
+  padding: 20px;
+  background-color: orange;
+  width: 50px;
+  border: none;
+  margin: 5px;
+
+}
+.form{
+  border: 1px solid;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(233, 233, 233));
+  border-radius: 5px;
+  max-width: 500px;
+
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  /* width: 20%; */
+  padding: 0 1em 1em 1em;
+
+}
+label{
+  padding: 2px;
+}
+input{
+  padding: 2px;
+}

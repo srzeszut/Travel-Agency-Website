@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div *ngIf="AS.isLoggedIn" class="container">
+    <div class="count" [ngStyle]="this.CS.numberOfElements()<10 ? {'background-color': 'red'}:{'background-color': 'green'}">
+      <p>Zarezerwowane wycieczki: {{this.CS.numberOfElements()}}</p>
+      <p>Suma Wycieczek:{{this.CS.sumElements() | currency}}</p>
+  </div>
+  <div class="notification">
+    <span class="material-symbols-outlined bell">
+      notifications
+      </span>
+      <!-- <div class="notif" *ngFor="let item of notifications">
+        <p>Wycieczka: {{item}} odbedzie sie jutro!</p>
+      </div> -->
+
+  </div>
+
+  <!-- <app-trips ></app-trips> -->
+</div>

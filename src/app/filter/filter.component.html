@@ -1,0 +1,36 @@
+<!-- s -->
+<div (mousemove)="setEmit()" class="filter-container">
+  <form [formGroup]="form">
+
+    <label for="countries">Lokalizacja:</label>
+    <div class="country-container">
+        <div class="countries" *ngFor="let country of allCountries;let i=index" >
+            <input type="checkbox"  name="country" [id]="'country'+i" (change)="addCountry($event,country)" checked>
+            <label for="country">{{country}} </label>
+        </div>
+    </div>
+    <label for="price">Cena: </label>
+    <div  class="price-container">
+
+        <input (keyup)="filterLowPrice($event)" value ="{{loadedpricel}}"id="cheapest" type="number" min="{{loadedpricel}}"max="{{loadedpriceh}}" formControlName="priceLow">
+        <input  (keyup)="filterUpPrice($event)" value ="{{loadedpriceh}}" id="expensive" type="number" min="{{loadedpricel}}"max="{{loadedpriceh}}"  formControlName="priceHigh">
+
+    </div>
+
+    <label for="date-container">Data: </label>
+    <div class="date-container">
+
+        <input (click)="filterLowDate($event)" id="date-start" type="date" formControlName="dateLow">
+        <input  (click)="filterUpDate($event)" id="date-end" type="date" formControlName="dateHigh">
+    </div>
+
+    <label for="countries">Ocena:</label>
+    <div class="rating-container">
+        <div class="ratings" *ngFor="let rating of allRatings" >
+            <input type="checkbox" id="rating" name="rating" (change)="addRating($event,rating)" checked>
+            <label for="rating">{{rating}} </label>
+        </div>
+    </div>
+  </form>
+
+</div>

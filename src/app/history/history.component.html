@@ -1,0 +1,40 @@
+<app-reserved></app-reserved>
+
+<div class="menu">
+  <div class="actual-date">
+    <form (submit)="onSubmit()">
+      <label for="today">Wybierz datę:</label>
+      <input id="today"type="date" [(ngModel)]="currentDate">
+      <input type="submit" value="dodaj">
+  </form>
+  </div>
+  <div class="clear">
+    <span class="del" (click)="clearHistory()">Wyczyść Historie</span>
+  </div>
+</div>
+
+<div class="trip-container">
+<div class="trip-info"
+
+
+  *ngFor=" let trip of trips  ">
+
+
+      <picture>
+        <a routerLink="/trips/{{trip.id}}">
+          <img src="{{trip.img1}}" alt="{{trip.name}}">
+        </a>
+      </picture>
+      <div class="content">
+          <p class="name">{{trip.name | uppercase}} </p>
+          <p class="desc"><b>{{trip.destination | uppercase}}  ({{trip.state | uppercase}})</b></p>
+          <p class="desc">{{trip.startingDate | date}} - {{trip.endingDate | date}}</p>
+          <p class="desc">Kupiona: {{trip.boughtDate |date}}</p>
+          <p class="desc">Ilość: {{trip.quantity}}</p>
+          <hr class="line">
+          <span id="price">Cena: {{trip.price | currency}} </span>
+
+
+            <span id="rating" > <b>{{trip.rating}}             </b><app-rating  [selectedValue]="trip.rating"></app-rating>    (274)</span>
+        </div>
+      </div>

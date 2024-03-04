@@ -1,0 +1,28 @@
+<!-- <p>basket works!</p> -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+<app-reserved></app-reserved>
+<div class="basket">
+
+<div class="trip-container">
+  <div class="trip-info"
+
+  *ngFor=" let trip of trips  "><!-- <div class="cart-element" style="color: red; border: none;"><b>Razem: {{sumElements(this.cartService.displayCart()) |currency}}</b></div> -->
+  <button class="rem-trip" (click)="removeTrip(trip)">Usuń z koszyka</button>
+  <picture>
+        <a routerLink="/trips/{{trip.id}}">
+          <img src="{{trip.img1}}" alt="{{trip.name}}">
+        </a>
+      </picture>
+      <div class="content">
+          <p class="name">{{trip.name | uppercase}}</p>
+          <p class="desc"><b>{{trip.destination | uppercase}}</b></p>
+          <p class="desc">{{trip.startingDate | date}} - {{trip.endingDate | date}}</p>
+          <br>
+          <span id="price" (click)="buyTrip(trip)">Kup: {{trip.price | currency}} </span>
+
+        </div>
+
+    </div>
+</div>
+</div>
+

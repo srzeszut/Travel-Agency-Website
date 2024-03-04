@@ -1,0 +1,42 @@
+<a routerLink="/manage">
+  <div class="back">
+      Powrót
+  </div>
+</a>
+
+<div class="form">
+  <p>Nowa wycieczka: </p>
+  <form [formGroup]="form">
+      <label for="name">Nazwa Wycieczki(max 17 znaków): </label>
+      <input id="name" type="text" formControlName="name">
+
+      <label for="country">Kraj:</label>
+      <input id="country" type="text" formControlName="destination">
+
+      <label for="start">Data rozpoczęcia: </label>
+      <input id="start" type="date" formControlName="startingDate">
+
+      <label for="end">Data zakończenia: </label>
+      <input id="end" type="date" formControlName="endingDate">
+
+      <label for="descr">Opis(max 100 znaków): </label>
+      <input id="descr" type="text" formControlName="description">
+
+      <label for="price">Cena($): </label>
+      <input id="price" type="number" min="0" formControlName="price">
+
+      <label for="no-places">Ilość miejsc: </label>
+      <input id="no-places" type="number" min="0" formControlName="quantity">
+
+      <label for="image">Zdjęcie: </label>
+      <input id="image" type="text" formControlName="img" >
+
+      <button type="submit" (click)="onSubmit()">Dodaj</button>
+      <p *ngIf="formBad" [ngStyle]="{'color': 'red'}">Wprowadź poprawne dane!</p>
+      <p *ngIf="formGood" [ngStyle]="{'color': 'green'}">Poprawnie dodano wycieczkę!</p>
+
+      <!-- <pre>{{form.value | json}}</pre> -->
+
+
+  </form>
+</div>

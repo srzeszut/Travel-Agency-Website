@@ -1,0 +1,32 @@
+<div class="options">
+
+  <div class="set-pers">
+      <h1>PERSYSTENCJA</h1>
+      Set persistance:
+      <select #selectPers (change)="setPersistence(selectPers.value)">
+        <option value="local" [selected]="this.AS.persistence === 'local'" >Local</option>
+        <option value="session" [selected]="this.AS.persistence === 'session'">Session</option>
+        <option value="none" [selected]="this.AS.persistence === 'none'">None</option>
+      </select>
+      <p>Persistence: <b>{{AS.persistence}}</b></p>
+  </div>
+
+    <div class="user-manage">
+      <h1>ZARZĄDZANIE UŻYTKOWNIKAMI</h1>
+      <li *ngFor="let user of this.users">
+       <p> Nazwa użytkownika: <b>{{user.name | uppercase}} </b>, Rola: <b>{{user.role| uppercase}}</b>,<br> Zbanowany: <b>{{user.banned}}</b>,  Zmień rolę:
+        <select #selectRole (change)="setRole(user.uid,selectRole.value)">
+          <option value="customer" [selected]="user.role === 'customer'">customer</option>
+          <option value="manager" [selected]="user.role === 'manager'">manager</option>
+          <option value="admin" [selected]="user.role === 'admin'">admin</option>
+        </select>
+        Zbanuj:
+        <input type="checkbox" (change)="banUser(user.uid)"[checked]="user.banned">
+      </p>
+
+      </li>
+    </div>
+
+</div>
+
+
